@@ -2,6 +2,7 @@
 
 use jack::*;
 use std::io::timer::*;
+use std::io::println;
 use std::time::duration::Duration;
 
 struct CallbackData {
