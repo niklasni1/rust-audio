@@ -21,10 +21,10 @@ fn main() {
     // so now... on start up, get a file, mmap a file 
     // loop is copy bytes
 
-    //phase = (phase + (1 / (sr / 440))) 
+    //phase = (phase + (2 / (sr / 440))) 
     fn calc_point(synth: &mut Synthdata, sample_rate: u32) -> f32 { 
-      synth.phase = synth.phase + (1f32 / (sample_rate as f32 / 440f32)) ;
-      0.8f32 * synth.phase.to_radians().sin()
+      synth.phase = synth.phase + (1f32 / (sample_rate as f32 / 440f32));
+      0.8f32 * synth.phase.sin()
     }
 
     unsafe fn sine(nframes: JackNframesT, data:&mut CallbackData) { 
